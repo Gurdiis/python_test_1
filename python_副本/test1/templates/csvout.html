@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/alldisp" method="POST">
+        <table border="1">
+            <h1>以下の内容で登録しました。</h1>
+            <tr>
+                <td>学籍番号</td>
+                <td>{{ last_data[0] }}</td>
+            </tr>
+            <tr>
+                <td>氏名</td>
+                <td>{{ last_data[1] }}</td>
+            </tr>
+            <tr>
+                <td>クラス</td>
+                <td>{{ last_data[2] }}</td>
+            </tr>
+            <tr>
+                <td>出席番号</td>
+                <td>{{ last_data[3] }}</td>
+            </tr>
+            <tr>
+                <td>郵便番号</td>
+                <td>{{ last_data[4] }}</td>
+            </tr>
+            <tr>
+                <td>住所</td>
+                <td>{{ last_data[5] }}</td>
+            </tr>
+            <tr>
+                <td>電話</td>
+                <td>{{ last_data[6] }}</td>
+            </tr>
+            <tr>
+                <td>メール</td>
+                <td>{{ last_data[7] }}</td>
+            </tr>
+        </table>
+        <input type="submit" value="一覧表示">
+    </form>
+</body>
+</html>

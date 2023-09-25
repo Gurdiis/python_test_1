@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/csvout" method="POST">
+        <table border="1">
+            <h1>登録します。よろしいですか？</h1>
+            <tr>
+                <td>商品コード</td>
+                <td>{{session['ganumber']}}</td>
+            </tr>
+            <tr>
+                <td>商品名</td>
+                <td>{{session['name']}}</td>
+            </tr>
+            <tr>
+                <td>商品価格</td>
+                <td>{{session['klass']}}</td>
+            </tr>
+        </table>
+        <input type="submit" value="登録">
+    </form>
+    <form action="/input" method="POST">
+        <input type="submit" value="修正">
+    </form>
+</body>
+</html>

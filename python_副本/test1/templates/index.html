@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/check" method="POST">
+        <table border="1">
+            <h1>アンケートフォーム</h1>
+            <tr>
+                <td>学籍番号</td>
+                <td><input type="text" name="ganumber" value="{{data['ganumber']}}{{session['ganumber']}}"></td>
+                <td>{{errors['ganumber']}}</td>
+            </tr>
+            <tr>
+                <td>氏名</td>
+                <td><input type="text" name="name" value="{{data['name']}}{{session['name']}}"></td>
+                <td>{{errors['name']}}</td>
+            </tr>
+            <tr>
+                <td>クラス</td>
+                <td><input type="text" name="klass" value="{{data['klass']}}{{session['klass']}}"></td>
+                <td>{{errors['klass']}}</td>
+
+            </tr>
+            <tr>
+                <td>出席番号</td>
+                <td><input type="text" name="shnumber" value="{{data['shnumber']}}{{session['shnumber']}}"></td>
+                <td>{{errors['shnumber']}}</td>
+
+            </tr>
+            <tr>
+                <td>郵便番号</td>
+                <td><input type="text" name="yunumber" value="{{data['yunumber']}}{{session['yunumber']}}"></td>
+                <td>{{errors['yunumber']}}</td>
+
+            </tr>
+            <tr>
+                <td>住所</td>
+                <td><input type="text" name="address" value="{{data['address']}}{{session['address']}}"></td>
+                <td>{{errors['address']}}</td>
+
+            </tr>
+            <tr>
+                <td>電話</td>
+                <td><input type="tel" name="tel" value="{{data['tel']}}{{session['tel']}}"></td>
+                <td>{{errors['tel']}}</td>
+
+            </tr>
+            <tr>
+                <td>メール</td>
+                <td><input type="email" name="mail" value="{{data['mail']}}{{session['mail']}}"></td>
+                <td>{{errors['mail']}}</td>
+            </tr>
+
+        </table>
+        <input type="submit" value="送信">
+    </form>
+</body>
+</html>

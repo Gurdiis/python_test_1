@@ -1,0 +1,132 @@
+<!-- csv -->
+file_path = 'data.csv'
+
+csvdata = [
+['学籍番号', ganumber],
+['氏名', name],
+['クラス', klass],
+['出席番号', shnumber],
+['郵便番号', yunumber],
+['住所', address],
+['電話番号', tel],
+['メール', mail],
+]
+
+with open(file_path, 'w', newline='') as file:
+writer = csv.writer(file)
+
+for row in csvdata:
+    writer.writerow(row)
+
+return render_template('user.html', data=data)
+
+
+
+{% for key, value in data.items() %}
+<tr>
+    <td>{{ fields[key] }}</td>
+    <td>{{ value }}</td>
+</tr>
+{% endfor %}
+
+
+
+<table border="1">
+    {% for item in data %}
+        <tr>
+            <td>{{ item[0] }}</td>
+            <td>{{ item[1] }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+'klass': 'クラス',
+'shnumber': '出席番号',
+'yunumber': '郵便番号',
+'address': '住所',
+'tel': '電話番号',
+'mail': 'メール'
+
+for field, label in fields.items():
+value = request.form.get(field)
+if value:
+    data[field] = value
+else:
+    errors[field] = f"{label}が入力されていません。"
+
+
+
+    return render_template('user.html', all_data=all_data,fields=fields)
+
+
+    <!-- csv -->
+    else:
+    csvdata = []
+
+    file_path = 'data.csv'
+
+    csvdata.append([data.get(key, '') for key in fields])
+
+    with open(file_path, 'a', newline='',encoding='utf-8') as file:
+        writer = csv.writer(file)
+        writer.writerows(csvdata)
+
+    all_data = []
+    with open(file_path, 'r', newline='', encoding='utf-8') as file:
+        reader = csv.reader(file)
+        for row in reader:
+            all_data.append(row)
+
+
+
+            <tr>
+                {% for field_label in fields.values() %}
+                    <th>{{ field_label }}</th>
+                {% endfor %}
+                </tr>
+                {% for row in all_data %}
+                <tr>
+                  {% for value in row %}
+                    <td>{{ value }}</td>
+                  {% endfor %}
+                </tr>
+                {% endfor %}    
+
+                
+                <tr>
+                    <td>クラス</td>
+                    <td><input type="text" name="klass" value="{{data['klass']}}"></td>
+                    <td>{{errors['klass']}}</td>
+    
+                </tr>
+                <tr>
+                    <td>出席番号</td>
+                    <td><input type="text" name="shnumber" value="{{data['shnumber']}}"></td>
+                    <td>{{errors['shnumber']}}</td>
+    
+                </tr>
+                <tr>
+                    <td>郵便番号</td>
+                    <td><input type="text" name="yunumber" value="{{data['yunumber']}}"></td>
+                    <td>{{errors['yunumber']}}</td>
+    
+                </tr>
+                <tr>
+                    <td>住所</td>
+                    <td><input type="text" name="address" value="{{data['address']}}"></td>
+                    <td>{{errors['address']}}</td>
+    
+                </tr>
+                <tr>
+                    <td>電話</td>
+                    <td><input type="tel" name="tel" value="{{data['tel']}}"></td>
+                    <td>{{errors['mail']}}</td>
+    
+                </tr>
+                <tr>
+                    <td>メール</td>
+                    <td><input type="email" name="mail" value="{{data['mail']}}"></td>
+                    <td>{{errors['mail']}}</td>
+    
+                </tr>
+    
