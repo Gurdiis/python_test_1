@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>書き込み完了</h1>
+    <form action="/getcookie" method="post">
+        <table border="1">
+            <tr>
+              <td>名前</td>
+              <td>{{data['name']}}</td>
+          </tr>
+          <tr>
+              <td>住所</td>
+              <td>{{data['address']}}</td>
+          </tr>
+          </table>      
+          <input type="submit" value="表示">
+    </form>
+</body>
+</html>
